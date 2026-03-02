@@ -2,18 +2,18 @@ name : ci_pipeline
 on:
   push:
     branches:
-      -main
+      -  main
   pull_request:
-      -main
+      -  main
   workflow_dispatch:
 jobs:
   lint:
     runs-on:  ubuntu-latest
     steps:
       -  name:  recuperer le code 
-      -  uses:  actions/checkout 
+      -  uses:  actions/checkout@v3
       -  name:  installer python
-      -  uses:  actions/setup-python
+      -  uses:  actions/setup-python@v5
          with:
            python-version:  "3.11"
       -  name:  installer les dépendances
