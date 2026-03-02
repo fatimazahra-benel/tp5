@@ -1,10 +1,9 @@
 name : ci_pipeline
 on:
   push:
-    branches:
-      -  main
+    branches: [main]
   pull_request:
-      -  main
+    branches: [main]
   workflow_dispatch:
 jobs:
   lint:
@@ -39,7 +38,7 @@ jobs:
       -  name:  générer le package
          run:  python -m build
       -  name: upload du resultat comme artefact
-      -  uses:  actiona/upload-artifact@v3
+         uses:  actiona/upload-artifact@v3
     
     
 
